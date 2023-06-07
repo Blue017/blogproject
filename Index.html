@@ -8,7 +8,12 @@
 </head>
 <body>
   <header>
-    <h1>Mi Blog Personal</h1>
+    <div class="logo">
+      <img src="images/logo150.png" alt="Logo de Lore Explorers">
+    </div>
+    <div class="blog-title">
+      <h1>Lore Explorers</h1>
+    </div>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -17,27 +22,19 @@
       </ul>
     </nav>
   </header>
-  
   <main>
     <section class="latest-posts">
       <h2>Últimas Publicaciones</h2>
-      <article>
-        <h3>Título de la Publicación 1</h3>
-        <p>Fecha: <time datetime="2023-06-05">5 de Junio de 2023</time></p>
-        <p>Autor: Nombre del Autor</p>
-        <p>Contenido de la publicación...</p>
-        <a href="detalle-publicacion.html">Título de la Publicación 1</a>
-      </article>
-      <article>
-        <h3>Título de la Publicación 2</h3>
-        <p>Fecha: <time datetime="2023-06-04">4 de Junio de 2023</time></p>
-        <p>Autor: Nombre del Autor</p>
-        <p>Contenido de la publicación...</p>
-        <a href="detalle-publicacion.html">Título de la Publicación 1</a>
-      </article>
+      <div class="post-slider">
+        <!-- Aquí se agregarán dinámicamente las tarjetas de publicación -->
+      </div>
+      <div class="slider-controls">
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+      </div>
     </section>
   </main>
-  
+  <script src="latest-posts.js"></script>
   <footer>
     <p>Derechos de autor &copy; 2023 Mi Blog Personal</p>
   </footer>

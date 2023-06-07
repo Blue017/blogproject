@@ -5,6 +5,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
 h1, h2, h3 {
@@ -23,8 +24,22 @@ a:hover {
 /* Estilos de encabezado */
 header {
   background-color: #f2f2f2;
-  padding: 20px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  margin-right: 10px; /* Espacio entre el logo y el título */
+}
+
+.blog-title {
+  flex: 1; /* Permite que el título ocupe el espacio restante */
+}
+
+.blog-title h1 {
+  margin: 0;
 }
 
 header h1 {
@@ -49,18 +64,23 @@ section.latest-posts {
 
 section.latest-posts h2 {
   margin-bottom: 10px;
+  font-size: 24px;
 }
 
 section.latest-posts article {
   margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
 }
 
 section.latest-posts h3 {
   margin: 0;
+  font-size: 18px;
 }
 
 section.latest-posts p {
   margin: 5px 0;
+  font-size: 14px;
 }
 
 section.latest-posts a {
@@ -70,9 +90,92 @@ section.latest-posts a {
   padding: 5px 10px;
   text-decoration: none;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 section.latest-posts a:hover {
+  background-color: #005299;
+}
+
+.post-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.post-card {
+  flex: 0 0 25%; /* Ajusta el ancho de las tarjetas según tu diseño */
+  /* Estilos adicionales para las tarjetas */
+}
+
+/* Estilos de enlaces dentro de las tarjetas de publicación */
+.post-card a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.post-card a:hover {
+  background-color: #f2f2f2;
+}
+
+
+.slider-controls {
+  text-align: center;
+}
+
+.slider-controls button {
+  margin: 10px;
+}
+
+/* Estilos de detalle de publicación */
+article {
+  padding: 20px;
+}
+
+article h2 {
+  font-size: 28px;
+}
+
+article time {
+  font-size: 14px;
+  color: #777;
+}
+
+article p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Estilos de formulario de contacto */
+form.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form.contact-form input[type="text"],
+form.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+form.contact-form input[type="submit"] {
+  background-color: #0066cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+form.contact-form input[type="submit"]:hover {
   background-color: #005299;
 }
 
@@ -81,4 +184,5 @@ footer {
   background-color: #f2f2f2;
   padding: 10px;
   text-align: center;
+  font-size: 12px;
 }
