@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Personal - Título de la Publicación</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS -->
+</head>
+<body>
+  <header>
+    <h1>Mi Blog Personal</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="categorias.html">Categorías</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <article>
+      <h2>Título de la Publicación</h2>
+      <p>Fecha: <time datetime="2023-06-05">5 de Junio de 2023</time></p>
+      <p>Autor: Nombre del Autor</p>
+      
+      <div>
+        <img src="imagen-publicacion.jpg" alt="Imagen de la publicación">
+      </div>
+      
+      <p>Contenido completo de la publicación...</p>
+    </article>
+    
+    <h3>Comentarios</h3>
+    <div id="disqus_thread"></div>
+    <script>
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://TU-SUBDOMINIO.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>
+      Por favor, habilita JavaScript para ver los comentarios.
+    </noscript>
+    <div class="redes-sociales">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.tublog.com/publicacion1" target="_blank" rel="noopener noreferrer"><img src="facebook.png" alt="Compartir en Facebook"></a>
+      <a href="https://twitter.com/intent/tweet?url=https://www.tublog.com/publicacion1&amp;text=Título%20de%20la%20Publicación" target="_blank" rel="noopener noreferrer"><img src="twitter.png" alt="Compartir en Twitter"></a>
+      <a href="https://www.linkedin.com/shareArticle?url=https://www.tublog.com/publicacion1&amp;title=Título%20de%20la%20Publicación" target="_blank" rel="noopener noreferrer"><img src="linkedin.png" alt="Compartir en LinkedIn"></a>
+    </div>
+  </main>
+  
+  <footer>
+    <p>Derechos de autor &copy; 2023 Mi Blog Personal</p>
+  </footer>
+</body>
+</html>

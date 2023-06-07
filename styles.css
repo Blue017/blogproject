@@ -1,0 +1,84 @@
+/* styles.css */
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos de encabezado */
+header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Estilos de sección de últimas publicaciones */
+section.latest-posts {
+  padding: 20px;
+}
+
+section.latest-posts h2 {
+  margin-bottom: 10px;
+}
+
+section.latest-posts article {
+  margin-bottom: 20px;
+}
+
+section.latest-posts h3 {
+  margin: 0;
+}
+
+section.latest-posts p {
+  margin: 5px 0;
+}
+
+section.latest-posts a {
+  display: inline-block;
+  background-color: #0066cc;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+section.latest-posts a:hover {
+  background-color: #005299;
+}
+
+/* Estilos de pie de página */
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
