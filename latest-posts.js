@@ -3,25 +3,39 @@ const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 
 let scrollAmount = 0;
-const cardSize = postSlider.offsetWidth / 4; // Ajusta el número según el ancho de las tarjetas
+let cardSize;
+
+const totalScrollableWidth = () => postSlider.scrollWidth - postSlider.clientWidth;
 
 nextBtn.addEventListener('click', () => {
+  if (scrollAmount < totalScrollableWidth()) {
+    scrollAmount += cardSize;
+  } else {
+    scrollAmount = 0;
+  }
   postSlider.scrollTo({
-    left: (scrollAmount += cardSize),
+    left: scrollAmount,
     behavior: 'smooth',
   });
+  updateActiveDots(); // Llamamos a la función para actualizar las bolitas resaltadas
 });
 
 prevBtn.addEventListener('click', () => {
+  if (scrollAmount > 0) {
+    scrollAmount -= cardSize;
+  } else {
+    scrollAmount = totalScrollableWidth();
+  }
   postSlider.scrollTo({
-    left: (scrollAmount -= cardSize),
+    left: scrollAmount,
     behavior: 'smooth',
   });
+  updateActiveDots(); // Llamamos a la función para actualizar las bolitas resaltadas
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Obtener la referencia al contenedor de las tarjetas
-  var postSlider = document.querySelector(".post-slider");
+  var postSliderContainer = document.querySelector(".post-slider");
+  var dotsContainer = document.querySelector(".dots-container");
 
   // Simulación de una fuente de datos de posts
   var posts = [
@@ -36,42 +50,42 @@ document.addEventListener("DOMContentLoaded", function() {
       image: "imagen-publicacion-2.jpg"
     },
     {
-      title: "Título de la Publicación 2",
+      title: "Título de la Publicación 3",
+      date: "2023-06-04",
+      image: "imagen-publicacion-3.jpg"
+    },
+    {
+      title: "Título de la Publicación 4",
       date: "2023-06-04",
       image: "imagen-publicacion-2.jpg"
     },
     {
-      title: "Título de la Publicación 2",
+      title: "Título de la Publicación 5",
       date: "2023-06-04",
       image: "imagen-publicacion-2.jpg"
     },
     {
-      title: "Título de la Publicación 2",
+      title: "Título de la Publicación 6",
       date: "2023-06-04",
       image: "imagen-publicacion-2.jpg"
     },
     {
-      title: "Título de la Publicación 2",
+      title: "Título de la Publicación 7",
       date: "2023-06-04",
       image: "imagen-publicacion-2.jpg"
     },
     {
-      title: "Título de la Publicación 2",
+      title: "Título de la Publicación 8",
       date: "2023-06-04",
       image: "imagen-publicacion-2.jpg"
     },
     {
-      title: "Título de la Publicación 2",
+      title: "Título de la Publicación 9",
       date: "2023-06-04",
       image: "imagen-publicacion-2.jpg"
     },
     {
-      title: "Título de la Publicación 2",
-      date: "2023-06-04",
-      image: "imagen-publicacion-2.jpg"
-    },
-    {
-      title: "Título de la Publicación 2",
+      title: "Título de la Publicación 10",
       date: "2023-06-04",
       image: "imagen-publicacion-2.jpg"
     },
@@ -79,12 +93,13 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
 
   // Recorrer los posts y crear las tarjetas dinámicamente
-  posts.forEach(function(post) {
+
+  posts.forEach(function(post, index) {
     var postCard = document.createElement("div");
     postCard.className = "post-card";
 
     var postLink = document.createElement("a");
-    postLink.href = "detalle-publicacion.html"; // Reemplaza con la ruta correcta de detalle de la publicación
+    postLink.href = "detalle-publicacion.html";
 
     var postImage = document.createElement("img");
     postImage.src = post.image;
@@ -102,6 +117,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     postCard.appendChild(postLink);
 
-    postSlider.appendChild(postCard);
+    postSliderContainer.appendChild(postCard);
+
+    cardSize = postCard.offsetWidth;
+
+    var dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (index < 4) {
+      dot.classList.add("active-dot");
+    }
+    dotsContainer.appendChild(dot);
   });
+
+  function updateActiveDots() {
+    var dots = document.querySelectorAll('.dot');
+    var activeIndex = Math.floor(scrollAmount / cardSize);
+    
+    dots.forEach(function(dot, index) {
+      if (index >= activeIndex && index < activeIndex + 4) {
+        dot.classList.add('active-dot');
+      } else {
+        dot.classList.remove('active-dot');
+      }
+    });
+  }
+
 });

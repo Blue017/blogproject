@@ -60,6 +60,7 @@ nav ul li {
 /* Estilos de sección de últimas publicaciones */
 section.latest-posts {
   padding: 20px;
+  position: relative;
 }
 
 section.latest-posts h2 {
@@ -122,11 +123,55 @@ section.latest-posts a:hover {
 
 
 .slider-controls {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.slider-controls button {
-  margin: 10px;
+.prev-btn-container,
+.next-btn-container {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.next-btn-container {
+  justify-content: flex-end;
+}
+
+.slider-arrows {
+  display: flex;
+  align-items: center;
+}
+
+.slider-arrows button {
+  margin: 0;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  margin: 0 5px;
+}
+
+.active-dot {
+  background-color: #000;
+}
+
+.prev-btn,
+.next-btn {
+  margin: 0;
 }
 
 /* Estilos de detalle de publicación */
