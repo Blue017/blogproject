@@ -17,7 +17,7 @@ nextBtn.addEventListener('click', () => {
     left: scrollAmount,
     behavior: 'smooth',
   });
-  updateActiveDots(); // Llamamos a la función para actualizar las bolitas resaltadas
+  updateActiveDots(Math.floor(scrollAmount / cardSize) + 1); // Llamamos a la función para actualizar las bolitas resaltadas
 });
 
 prevBtn.addEventListener('click', () => {
@@ -32,6 +32,18 @@ prevBtn.addEventListener('click', () => {
   });
   updateActiveDots(); // Llamamos a la función para actualizar las bolitas resaltadas
 });
+
+function updateActiveDots() {
+  var dots = document.querySelectorAll('.dot');
+  var activeIndex = Math.floor(scrollAmount / cardSize);
+  dots.forEach(function(dot, index) {
+    if (index >= activeIndex && index < activeIndex + 4) {
+      dot.classList.add('active-dot');
+    } else {
+      dot.classList.remove('active-dot');
+    }
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function() {
   var postSliderContainer = document.querySelector(".post-slider");
@@ -128,18 +140,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     dotsContainer.appendChild(dot);
   });
-
-  function updateActiveDots() {
-    var dots = document.querySelectorAll('.dot');
-    var activeIndex = Math.floor(scrollAmount / cardSize);
-    
-    dots.forEach(function(dot, index) {
-      if (index >= activeIndex && index < activeIndex + 4) {
-        dot.classList.add('active-dot');
-      } else {
-        dot.classList.remove('active-dot');
-      }
-    });
-  }
-
 });
